@@ -1,0 +1,34 @@
+{
+  "author": "ybashanov",
+  "description": "Универсальное меню на все случаи жизни",
+  "keywords": "Menu React",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "yb-menu",
+  "scripts": {
+    "build": "webpack",
+    "example": "webpack --config ./webpack/webpack.example.js"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "callback-qa": "^1.0.6",
+    "css-loader": "^3.5.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^6.0.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  },
+  "version": "1.0.2"
+}
