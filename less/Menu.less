@@ -1,0 +1,77 @@
+.Menu {
+
+  // заготовки "крылья" для левой и правой пустой части
+  .level {
+    .wings {
+      display: none;
+      position: absolute;
+      width: 100%;
+
+      &.leftWing {
+        right: 100%;
+      }
+      &.rightWing {
+        left: 100%;
+      }
+    }
+  }
+
+
+  // isDisabled=true
+  .level {
+    > .item {
+      > .label.isDisabled_true {
+        color: #aaa;
+      }
+      &:hover {
+        > .label.isDisabled_true {
+          cursor: default;
+          color: #aaa;
+        }
+      }
+    }
+  }
+
+  .level {
+    > .item {
+      > .label {
+        > a {
+          color: inherit;
+          text-decoration: inherit;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+
+  // showType = view
+  .level.showType_view {
+    display: block;
+  }
+
+  // showType = hide
+  .level.showType_hide {
+    display: none;
+  }
+
+  // showType = hover
+  .level.showType_hover {
+    position: absolute;
+    //top: 0;
+    //left: 0;
+    display: none;
+  }
+  .item:hover > .level.showType_hover {
+    display: block;
+  }
+
+  // showType = click
+  .level.showType_click {
+    &.isShow_false {
+      display: none;
+    }
+    &.isShow_true {
+      display: block;
+    }
+  }
+}
