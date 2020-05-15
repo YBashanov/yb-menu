@@ -1,0 +1,172 @@
+// Параметры
+@text-color: #111111;
+@text-hover-color: #498dff;
+@text-disable: #aaaaaa;
+@line-hover-color: #777777;
+
+.Tahoma_16 {
+  font-family: Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.Tahoma_16_bold {
+  font-family: Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+.box-shadow(@params){
+  -webkit-box-shadow: @params;
+  -moz-box-shadow: @params;
+  box-shadow: @params;
+}
+
+
+
+// реализация пользовательских стилей
+// верстка и шрифты
+.Menu {
+  // растяжка
+  position: relative;
+
+  // ---------- 1й уровень ----------
+  .level.level_1 {
+    background-color: #FFFFFF;
+    // растяжка
+    width: 100%;
+
+    > .item {
+      display: inline-block;
+      padding:0 30px;
+
+      &:nth-child(3) {
+        padding-left: 0;
+      }
+      &:last-child  {
+        padding-right: 0;
+      }
+
+      > .label {
+        padding: 12px 0 10px 0;
+        cursor: pointer;
+        .Tahoma_16;
+        color: @text-color;
+      }
+      &:hover {
+        > .label {
+          border-bottom: 2px solid @line-hover-color;
+        }
+      }
+
+
+      // ---------- 2й уровень ----------
+      .level.level_2 {
+        // растяжка
+        width: 100%;
+        position: absolute;
+        left: 0;
+        border-top: 1px solid #E6E6E6;
+        .box-shadow(0 4px 8px -5px rgba(0, 0, 0, 0.16));
+
+
+        background-color: #FFFFFF;
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+
+        // левая и правая стороны - если требуется выйти за пределы центральной области верстки
+        > .wings {
+          display: block;
+          top: 0;
+          height: 100%;
+          background-color: #fff;
+
+          .box-shadow(0 4px 8px -5px rgba(0, 0, 0, 0.16));
+        }
+
+
+        // имя className в объекте menu (жирный текст)
+        &.boldHref {
+          > .item {
+            display: inline-block;
+            margin: 0 30px;
+
+            &:nth-child(3) {
+              margin-left: 0;
+            }
+            &:last-child  {
+              margin-right: 0;
+            }
+
+            > .label {
+              .Tahoma_16_bold;
+            }
+            &:hover {
+              > .label {
+                cursor: default;
+                color: @text-color;
+              }
+            }
+          }
+        }
+
+        // без дополнительного className (обычный текст)
+        > .item {
+          display: block;
+          margin-bottom: 12px;
+
+          color: @text-color;
+
+          > .label {
+            .Tahoma_16;
+          }
+          > .label.isDisabled_true {
+            color: @text-disable;
+          }
+
+          &:hover {
+            > .label {
+              cursor: pointer;
+              color: @text-hover-color;
+            }
+            > .label.isDisabled_true {
+              cursor: default;
+              color: @text-disable;
+            }
+          }
+
+
+          // ---------- 3й уровень ----------
+          .level.level_3 {
+            padding-top: 12px;
+
+            > .item {
+              display: block;
+              margin-bottom: 12px;
+
+              > .label {
+                .Tahoma_16;
+              }
+
+              &:hover {
+                > .label {
+                  cursor: pointer;
+                  color: @text-hover-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
